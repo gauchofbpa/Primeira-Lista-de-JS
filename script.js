@@ -13,16 +13,16 @@ function somarNumeros() {
         }
     alert("A soma dos números é: " + soma);
 }
-
 // Questão 02 //
 function contagemRegressiva() {
     let contagem = 10;
+    alert("VOCÊ INICIOU A CONTAGEM REGRESSIVA DO FOGUETE DA NASA!!!")
     while (contagem > 0) {
-        alert(contagem);
+        alert("Foguete será lançado em: " + contagem);
         contagem -= 1;
     }
+    alert("O lançamento foi um fracasso...")
 }
-
 // Questão 03 //
 function balancoFinanceiro() {
     let brutoTotal = 0;
@@ -54,7 +54,6 @@ function balancoFinanceiro() {
         alert("Você teve lucro na empresa, parabéns!");
     }
 }
-
 // Questão 04 //
 function decrescente() {
     let numero = [];
@@ -68,7 +67,6 @@ function decrescente() {
     numero.sort((a, b) => b - a);
     alert("Seus números em ordem decrescente ficaram da seguinte forma: " + numero);
 }
-
 // Questão 05 //
 function parImpar () {
     let continuar = true;
@@ -83,10 +81,9 @@ function parImpar () {
         } else {
             alert("Por favor, digite um número válido.");
         }
-        continuar = confirm("Deseja continuar invertendo?");
+        continuar = confirm("Deseja continuar?");
     }
 }
-
 // Questão 06 //
 function vogalConsoante() {
     let continuar = true;
@@ -105,19 +102,23 @@ function vogalConsoante() {
         continuar = confirm("Deseja continuar?");
     }
 }
-
 // Questão 07 //
 function picole() {
     let sabor = [["chocolate", 1.50], ["morango", 2.50], ["creme", 2.50], ["manga", 3.20], ["melancia", 3.40], ["vanilla ice", 3.00], ["ceu azul", 3.60], ["brownie", 4.00], ["hawaiano", 5.00]];
     let i = 0;
     let opcao = "";
-    opcao = prompt("Informe o sabor de sua escolha");
-    for (i = 0; i < sabor.length; i++) {
-        console.log(sabor[i][0] + ": " + sabor[i][1]);
-    }
-    for (i = 0; i < sabor.length; i++) {
-        if (opcao === sabor [i][0]) {
-            console.log("O picolé de sabor" + sabor[i][0] + "custa R$" + sabor[i][1]);
+    let continuar = true;
+    while (continuar) {
+        opcao = prompt("Informe o sabor de sua escolha");
+        let resultado = opcao.toLowerCase();
+        for (i = 0; i < sabor.length; i++) {
+            console.log(sabor[i][0] + ": " + sabor[i][1]);
         }
-    }
+        for (i = 0; i < sabor.length; i++) {
+            if (resultado == sabor [i][0]) {
+                alert("O picolé de sabor " + sabor[i][0] + " custa R$" + sabor[i][1]);
+            }
+        }
+        continuar = confirm("Deseja continuar?");
+    }    
 }
